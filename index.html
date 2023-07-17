@@ -22,7 +22,7 @@
             
             window.addEventListener('message', event => {
                 try {
-                    if (data !== 'check3rdPartyCookie'){
+                    if (event.data !== 'check3rdPartyCookie'){
                         console.log('Received message: ', data);
                        return;
                     }

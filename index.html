@@ -23,11 +23,11 @@
             window.addEventListener('message', event => {
                 try {
                     if (event.data !== 'check3rdPartyCookie'){
-                        console.log('Received message: ', data);
+                        console.log('Received message: ', event.data);
                        return;
                     }
                     let result = checkCookiesEnable()
-                    parent.postMessage(JSON.stringify({
+                    window.parent.postMessage(JSON.stringify({
                         'is3rdPartyCookiesEnabled': result
                     }), event.origin)
                 }

@@ -13,13 +13,13 @@
 
             return isCookieEnabled;
         }
-
-        let result = checkCookiesEnable();
-        window.parent?.postMessage(JSON.stringify({
-            'is3rdPartyCookiesEnabled': result
-        }), '*')
                         
         (function () {
+            let result = checkCookiesEnable();
+            window.parent?.postMessage(JSON.stringify({
+                'is3rdPartyCookiesEnabled': result
+            }), '*');
+            
             window.addEventListener('message', event => {
                 try {
                     let data = JSON.parse(event.data)

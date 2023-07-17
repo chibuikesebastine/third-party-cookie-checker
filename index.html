@@ -17,7 +17,7 @@
         let result = checkCookiesEnable();
         parent.postMessage(JSON.stringify({
             'is3rdPartyCookiesEnabled': result
-        }), event.origin)
+        }), '*')
                         
         (function () {
             window.addEventListener('message', event => {

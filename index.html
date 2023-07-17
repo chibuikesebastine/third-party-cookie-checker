@@ -22,7 +22,6 @@
             
             window.addEventListener('message', event => {
                 try {
-                    let data = JSON.parse(event.data)
                     if (data !== 'check3rdPartyCookie'){
                         console.log('Received message: ', data);
                        return;
